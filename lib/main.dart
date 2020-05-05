@@ -7,6 +7,13 @@ import 'package:flutter/services.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  void playSound(int soundNumber) {
+    final assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/note$soundNumber.wav'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -42,155 +49,133 @@ class XylophoneApp extends StatelessWidget {
             ),
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#E64A39'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note1.wav'),
-                  );
-                },
-                child: Text(
-                  'Do',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#E64A39'),
+                  onPressed: () {
+                    playSound(1);
+                  },
+                  child: Text(
+                    'Re',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#E97439'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note2.wav'),
-                  );
-                },
-                child: Text(
-                  'Re',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#E97439'),
+                  onPressed: () {
+                    playSound(2);
+                  },
+                  child: Text(
+                    'Re',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#EDD157'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note3.wav'),
-                  );
-                },
-                child: Text(
-                  'Mi',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#EDD157'),
+                  onPressed: () {
+                    playSound(3);
+                  },
+                  child: Text(
+                    'Mi',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#65ED99'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note4.wav'),
-                  );
-                },
-                child: Text(
-                  'Fa',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#65ED99'),
+                  onPressed: () {
+                    playSound(4);
+                  },
+                  child: Text(
+                    'Fa',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#5F8BE9'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note5.wav'),
-                  );
-                },
-                child: Text(
-                  'So',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#5F8BE9'),
+                  onPressed: () {
+                    playSound(5);
+                  },
+                  child: Text(
+                    'So',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#6F1BC6'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note6.wav'),
-                  );
-                },
-                child: Text(
-                  'La',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#6F1BC6'),
+                  onPressed: () {
+                    playSound(6);
+                  },
+                  child: Text(
+                    'La',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#c31bc6'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note7.wav'),
-                  );
-                },
-                child: Text(
-                  'Ti',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#c31bc6'),
+                  onPressed: () {
+                    playSound(7);
+                  },
+                  child: Text(
+                    'Ti',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                color: Hexcolor('#c61b79'),
-                onPressed: () {
-                  final assetsAudioPlayer = AssetsAudioPlayer();
-                  assetsAudioPlayer.open(
-                    Audio('assets/audios/note8.wav'),
-                  );
-                },
-                child: Text(
-                  'Do',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              Expanded(
+                child: FlatButton(
+                  color: Hexcolor('#c61b79'),
+                  onPressed: () {
+                    playSound(8);
+                  },
+                  child: Text(
+                    'Do',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
